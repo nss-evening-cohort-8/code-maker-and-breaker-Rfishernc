@@ -18,4 +18,19 @@ function encodeText() {
     })
 }
 
+function decodeText() {
+    document.getElementById('decodeButt').addEventListener('click', function() {
+        let decodeText = document.getElementById('decodeInput').value;
+        let decodeArray = decodeText.split(',');
+        let convertedString = '';
+        for(let i = 0; i < decodeArray.length; i++) {
+            convertedString += String.fromCharCode(decodeArray[i]);
+        }
+        writeToDom('decodeOutput', convertedString);
+    })
+}
+
+
+
 encodeText();
+decodeText();
